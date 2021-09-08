@@ -1,0 +1,414 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled2.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyO+xjiYFk4bHSxgy5EXfIgc",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/bunsanghun/21-2python/blob/main/210908\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "40uhFOp3nhSc"
+      },
+      "source": [
+        ""
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "z9oKUjXUqkQl"
+      },
+      "source": [
+        "## **학습목표**\n",
+        "- 반복문의 이해 및 활용\n",
+        "- range() 함수를 이해"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "-_I4O9lsq1vc"
+      },
+      "source": [
+        ""
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "CmO1lelSq3nN"
+      },
+      "source": [
+        "### **for 반복문**\n",
+        "- 리스트,문자열 등을 순회하면서 값을 처리할 때 사용\n",
+        "- i는 매번 문장을 수행할 때마다 a 리스트 안의 값으로 순차적으로 변경된다.\n",
+        "- 모든 a 안의 값이 수행되면 for문의 블록은 종료된다."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "APTLKIrfrO7T",
+        "outputId": "f9e5a2fd-8f0d-4ef2-8a4b-df4c4bf9675d"
+      },
+      "source": [
+        "a = [1,2,3,4,5]\n",
+        "\n",
+        "for i in a :\n",
+        "      print(i)"
+      ],
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1\n",
+            "2\n",
+            "3\n",
+            "4\n",
+            "5\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "BKYgaMqvr7NE",
+        "outputId": "184f4e4c-6972-4648-9414-c4815e9fe216"
+      },
+      "source": [
+        "#문자열에서 아이템을 출력해보기\n",
+        "\n",
+        "for x in \"Hello comnat B\" :\n",
+        "  print(x)\n"
+      ],
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "H\n",
+            "e\n",
+            "l\n",
+            "l\n",
+            "o\n",
+            " \n",
+            "c\n",
+            "o\n",
+            "m\n",
+            "n\n",
+            "a\n",
+            "t\n",
+            " \n",
+            "B\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "j-KH097e0dsC",
+        "outputId": "b28582e8-f508-4077-858d-8dbaaae0a13a"
+      },
+      "source": [
+        "# a 리스트 안의 수가 짝수면 그 수를 2로 나누고 \n",
+        "# 홀수일 경우 2를 곱한 수룰 출력하시오.\n",
+        "\n",
+        "a = [1,1,6,29,18,7] #짝수와 홀수의 리스트\n",
+        "\n",
+        "for i in a :\n",
+        "  if i % 2 == 0 : #짝수\n",
+        "    print(i//2)\n",
+        "  else :\n",
+        "    print(i*2)"
+      ],
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "2\n",
+            "2\n",
+            "3\n",
+            "58\n",
+            "9\n",
+            "14\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "iKtyTzBl2ogQ"
+      },
+      "source": [
+        "## **break**\n",
+        "-  특정 조건을 만족할  때 그 블록을 빠져나오기 위해서 사용"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "z9t0LNNd2miw",
+        "outputId": "be162551-df67-41b2-ac5b-b9ff6da6f811"
+      },
+      "source": [
+        "a = [1,1,6,29,18,7] \n",
+        "\n",
+        "for i in a :\n",
+        "  if i > 20:\n",
+        "    print(i)\n",
+        "    break"
+      ],
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "29\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HXrUN3aV1CYg",
+        "outputId": "fc790ceb-3566-4554-f413-d9f40ed4faf1"
+      },
+      "source": [
+        "#두 정수 A와 B를 입력받은 다음\n",
+        "# A+B를 출력하는 프로그램을 작성하시오.\n",
+        "t = int(input())\n",
+        "\n",
+        "for i in range(t):\n",
+        " a, b = input().split()\n",
+        " a = int(a)\n",
+        " b = int(b)\n",
+        " print(a+b)\n",
+        "\n"
+      ],
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "3\n",
+            "1 1\n",
+            "2\n",
+            "2 2\n",
+            "4\n",
+            "5 5\n",
+            "10\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "W8MhhrNSCiLL"
+      },
+      "source": [
+        "### **continue**\n",
+        "- 해당 아이템을 건너 뛰고 싶을 때 사용"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MJovsGuP67-G",
+        "outputId": "0432392c-7e12-4496-d7ea-2a85964771ab"
+      },
+      "source": [
+        "a = [3, 9, 7, 29,18]\n",
+        "\n",
+        "for i in a :\n",
+        "  if i > 5 and i < 20:\n",
+        "    print(i)\n",
+        "    continue"
+      ],
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "9\n",
+            "7\n",
+            "18\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "t9eKgXS1EgQL"
+      },
+      "source": [
+        "### **range 함수**\n",
+        "- 리스트 혹은 튜플을 쉽게 만들 수 있는 내장 함수\n",
+        "- 주어진 값에 따라 다양한 결과를 반환\n",
+        "\n",
+        "\n",
+        "'''python\n",
+        "range(10)          ->[0,1,2,3,4,5,6,7,8,9]\n",
+        "range(2,  10, 3)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "vNhLpivsDrbD"
+      },
+      "source": [
+        "print(list(range()))\n"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "4vmeNCYnF7Gs"
+      },
+      "source": [
+        "### **구구단 출력하기**\n",
+        "- 2단부터 9단까지\n",
+        "- 각 단은 1부터 9까지 곱하도록\n",
+        "\n",
+        "> [2단]\n",
+        "> - 2 * 1 = 2\n",
+        "> - 2 * 2 = 4\n",
+        "> ....\n",
+        "> - 2 * 9 = 18\n",
+        "> - 총 9단까지 출력"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xfbZsJMbG8Np",
+        "outputId": "4cdfc9ee-d4d2-418f-e2b1-3f5f7f0e90a1"
+      },
+      "source": [
+        "print(\" 구구단 출력하기wn\")\n",
+        "for j in range(2,10):\n",
+        "  print(\"[\",j,\"단]\")\n",
+        "  for i in (1,10) :\n",
+        "    print(j, '*', i ,'=', j*i)\n",
+        "  print()"
+      ],
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            " 구구단 출력하기wn\n",
+            "[ 2 단]\n",
+            "2 * 1 = 2\n",
+            "2 * 10 = 20\n",
+            "\n",
+            "[ 3 단]\n",
+            "3 * 1 = 3\n",
+            "3 * 10 = 30\n",
+            "\n",
+            "[ 4 단]\n",
+            "4 * 1 = 4\n",
+            "4 * 10 = 40\n",
+            "\n",
+            "[ 5 단]\n",
+            "5 * 1 = 5\n",
+            "5 * 10 = 50\n",
+            "\n",
+            "[ 6 단]\n",
+            "6 * 1 = 6\n",
+            "6 * 10 = 60\n",
+            "\n",
+            "[ 7 단]\n",
+            "7 * 1 = 7\n",
+            "7 * 10 = 70\n",
+            "\n",
+            "[ 8 단]\n",
+            "8 * 1 = 8\n",
+            "8 * 10 = 80\n",
+            "\n",
+            "[ 9 단]\n",
+            "9 * 1 = 9\n",
+            "9 * 10 = 90\n",
+            "\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "8oUf8N_GJNGL"
+      },
+      "source": [
+        ""
+      ],
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
